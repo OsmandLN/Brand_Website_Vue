@@ -1,9 +1,8 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <TheNavbar />
+  <!-- router-view為抽換樣板的進入口 -->
+  <router-view></router-view>
+  <TheFooter />
 </template>
 
 <style lang="scss">
@@ -28,3 +27,30 @@ nav {
   }
 }
 </style>
+
+<script>
+import TheNavbar from '../src/components/TheNavbar.vue'
+import TheFooter from '../src/components/TheFooter.vue'
+
+// import axios from 'axios'
+
+export default {
+  components: {
+    TheNavbar,
+    TheFooter
+  }
+
+  // mounted: function () {
+  //   axios
+  //     .get(
+  //       'https://raw.githubusercontent.com/hexschool/2021-ui-frontend-job/master/frontend_data.json'
+  //     )
+  //     .then((response) => {
+  //       console.log(response.data)
+  //     })
+  //     .catch((error) => {
+  //       console.log(error)
+  //     })
+  // }
+}
+</script>

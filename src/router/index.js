@@ -1,19 +1,30 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import NotFound from '../views/NotFound.vue'
+import TheHomePage from '../views/TheHomePage.vue'
+import TheAboutPage from '../views/TheAboutPage.vue'
+import MyFavoriteList from '../views/MyFavoriteList.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'home',
-    component: HomeView
+    component: TheHomePage
   },
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: TheAboutPage
+  },
+  {
+    path: '/my_favorite_list',
+    name: 'my_favorite_list',
+    component: MyFavoriteList
+  },
+  // In Vue3.x, the NotFound path differs form that in Vue2.x.
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'not found',
+    component: NotFound
   }
 ]
 
