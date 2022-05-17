@@ -20,7 +20,7 @@ const routes = [
     name: 'my_favorite_list',
     component: MyFavoriteList
   },
-  // In Vue3.x, the NotFound path differs form that in Vue2.x.
+  // In Vue3.x, the NotFound path differs from that in Vue2.x.
   {
     path: '/:pathMatch(.*)*',
     name: 'not found',

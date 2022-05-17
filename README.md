@@ -1,4 +1,4 @@
-# frontend_salary_survey
+# tainan_tourist_attractions
 
 ## Project setup
 ```
