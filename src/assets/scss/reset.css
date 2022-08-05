@@ -6,8 +6,7 @@ body {
 }
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 h1,
@@ -67,18 +66,15 @@ input {
 }
 
 input:required {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 input:invalid {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 ::-webkit-scrollbar {
   /* make scrollbar transparent */
   width: 0px;
   background: transparent;
-}
-/*# sourceMappingURL=reset.css.map */
+}/*# sourceMappingURL=reset.css.map */
