@@ -11,6 +11,7 @@ import VueAxios from 'vue-axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
 
+// app
 const app = createApp(App)
 
 // use the plugins
