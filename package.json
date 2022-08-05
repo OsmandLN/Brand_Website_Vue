@@ -1,5 +1,5 @@
 {
-  "name": "tainan_tourist_attractions",
+  "name": "brand_website_vue",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,19 +11,23 @@
     "@popperjs/core": "^2.11.5",
     "axios": "^0.27.2",
     "bootstrap": "^5.1.3",
-    "core-js": "^3.22.5",
-    "vue": "^3.2.13",
+    "core-js": "^3.23.4",
+    "leaflet": "^1.8.0",
+    "node-sass": "^7.0.1",
+    "vue": "^3.2.37",
     "vue-axios": "^3.4.1",
+    "vue-eslint-parser": "^9.0.3",
     "vue-media": "^1.1.1",
-    "vue-router": "^4.0.15"
+    "vue-router": "^4.1.2",
+    "vue2-leaflet": "^2.7.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.10",
-    "@babel/eslint-parser": "^7.12.16",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
-    "@vue/cli-plugin-router": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
+    "@babel/core": "^7.18.6",
+    "@typescript-eslint/parser": "^5.30.7",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-eslint": "^5.0.8",
+    "@vue/cli-plugin-router": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
     "@vue/eslint-config-standard": "^6.1.0",
     "eslint": "^7.32.0",
     "eslint-plugin-import": "^2.25.3",
@@ -31,7 +35,8 @@
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-vue": "^8.7.1",
     "sass": "^1.51.0",
-    "sass-loader": "^12.0.0"
+    "sass-loader": "^12.0.0",
+    "typescript": "^4.7.4"
   },
   "eslintConfig": {
     "root": true,
@@ -42,8 +47,9 @@
       "plugin:vue/vue3-essential",
       "@vue/standard"
     ],
+    "parser": "vue-eslint-parser",
     "parserOptions": {
-      "parser": "@babel/eslint-parser"
+      "parser": "@typescript-eslint/parser"
     },
     "rules": {
       "space-before-function-paren": "off"
@@ -54,5 +60,17 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ]
+  ],
+  "description": "## Project setup ``` npm install ```",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OsmandLN/Brand_Website_Vue.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OsmandLN/Brand_Website_Vue/issues"
+  },
+  "homepage": "https://github.com/OsmandLN/Brand_Website_Vue#readme"
 }
