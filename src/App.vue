@@ -6,6 +6,12 @@
 </template>
 
 <style lang="scss">
+// html,
+// body
+// {
+//   height: 100%;
+// }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -39,18 +45,5 @@ export default {
     TheNavbar,
     TheFooter
   }
-
-  // mounted: function () {
-  //   axios
-  //     .get(
-  //       'https://raw.githubusercontent.com/hexschool/2021-ui-frontend-job/master/frontend_data.json'
-  //     )
-  //     .then((response) => {
-  //       console.log(response.data)
-  //     })
-  //     .catch((error) => {
-  //       console.log(error)
-  //     })
-  // }
 }
 </script>
