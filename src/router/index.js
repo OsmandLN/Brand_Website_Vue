@@ -1,24 +1,36 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import NotFound from '../views/NotFound.vue'
-import TheHomePage from '../views/TheHomePage.vue'
-import TheAboutPage from '../views/TheAboutPage.vue'
-import MyFavoriteList from '../views/MyFavoriteList.vue'
+import HomePage from '../views/HomePage.vue'
+import AboutPage from '../views/AboutPage.vue'
+import ServicesPage from '../views/ServicesPage.vue'
+import SuccessfulCasesPage from '../views/SuccessfulCasesPage.vue'
+import ContactPage from '../views/ContactPage.vue'
 
 const routes = [
   {
-    path: '/home',
+    path: '/',
     name: 'home',
-    component: TheHomePage
+    component: HomePage
   },
   {
     path: '/about',
     name: 'about',
-    component: TheAboutPage
+    component: AboutPage
   },
   {
-    path: '/my_favorite_list',
-    name: 'my_favorite_list',
-    component: MyFavoriteList
+    path: '/services',
+    name: 'services',
+    component: ServicesPage
+  },
+  {
+    path: '/successful-cases',
+    name: 'successful-cases',
+    component: SuccessfulCasesPage
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: ContactPage
   },
   // In Vue3.x, the NotFound path differs from that in Vue2.x.
   {
