@@ -1,0 +1,34 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "company": "瑪信科技股份有限公司",
+      "description": "CNC產線規劃",
+      "image": "cnc-image.png"
+    },
+    {
+      "id": 2,
+      "company": "索拉科技股份有限公司",
+      "description": "太陽能板架設規劃",
+      "image": "solarpower-image.png"
+    },
+    {
+      "id": 3,
+      "company": "福諾科技股份有限公司",
+      "description": "熱流管線架設規劃",
+      "image": "pipe-image.png"
+    },
+    {
+      "id": 4,
+      "company": "奧多科技股份有限公司",
+      "description": "自動化產線規劃",
+      "image": "productionline-image.png"
+    },
+    {
+      "id": 5,
+      "company": "羅伯特科技股份有限公司",
+      "description": "自動化機械產線規劃",
+      "image": "robot-image.png"
+    }
+  ]
+}
