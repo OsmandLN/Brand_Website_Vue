@@ -3,13 +3,16 @@ import App from './App.vue'
 import router from './router'
 import '../src/assets/scss/reset.scss'
 
-// use axios
+// import axios
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
-// use bootstrap
+// import bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
+
+// import vue-leaflet
+import 'leaflet/dist/leaflet.css'
 
 // app
 const app = createApp(App)
