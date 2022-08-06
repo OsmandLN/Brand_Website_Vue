@@ -1,4 +1,5 @@
  <template>
+  <CompanyLocationMap />
   <form action="" class="contact-form" id="contact-form">
     <span>Please feel free to contact us.</span>
     <div class="appellation">
@@ -45,7 +46,7 @@ $gray-blue: #2e3c50;
   flex-direction: column;
   align-items: center;
   font-family: $project-font-TC;
-  outline: red 3px solid;
+  // outline: red 3px solid;
 
   span {
     margin: 0 0 20px 0;
@@ -128,3 +129,13 @@ $gray-blue: #2e3c50;
   }
 }
 </style>
+
+<script>
+import CompanyLocationMap from '@/components/CompanyLocationMap.vue'
+
+export default {
+  components: {
+    CompanyLocationMap
+  }
+}
+</script>
