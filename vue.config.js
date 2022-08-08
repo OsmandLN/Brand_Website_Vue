@@ -11,5 +11,13 @@ module.exports = {
         additionalData: '@import "~@/assets/scss/mainContentContainerSetting.scss";'
       }
     }
+  },
+  chainWebpack: config => {
+    config
+      .plugin('html')
+      .tap(args => {
+        args[0].title = 'TechPro'
+        return args
+      })
   }
 }
