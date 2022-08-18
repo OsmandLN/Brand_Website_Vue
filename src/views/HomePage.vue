@@ -16,10 +16,6 @@
     flex-direction: column;
     align-items: center;
 
-    .searching-card-container {
-      display: flex;
-      justify-content: center;
-    }
   }
 }
 
@@ -28,17 +24,6 @@
     .sub-container {
       min-width: 600px;
 
-      .searching-card-container {
-        width: 70%;
-      }
-
-      .cards-container {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
     }
   }
 }
@@ -53,6 +38,6 @@ export default {
     return {}
   },
   methods: {},
-  mounted: function () {}
+  mounted: function () { }
 }
 </script>
