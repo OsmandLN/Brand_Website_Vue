@@ -83,8 +83,8 @@ $gray-blue: #2e3c50;
   }
 
   .submit-btn {
-    border: $gray-blue 1px solid;
-    border-radius: 10px;
+    border: $gray-blue 2px solid;
+    border-radius: 5px;
     margin: 10px
   }
 }
