@@ -7,10 +7,6 @@ import '../src/assets/scss/reset.scss'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
-// import bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap'
-
 // import vue-leaflet
 import 'leaflet/dist/leaflet.css'
 
