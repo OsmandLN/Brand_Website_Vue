@@ -4,6 +4,8 @@
 
 <style scoped>
 h1 {
+  position: relative;
+  top: 20vh;
   margin: 30px auto;
   font-family: 'Akshar', sans-serif;
 }
