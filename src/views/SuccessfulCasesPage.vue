@@ -44,7 +44,7 @@ $project-font-TC: 'Noto Sans TC', sans-serif;
 </style>
 
 <script>
-import CaseItems from '@/assets/datas/successful-cases.json'
+import CaseItems from '../.././public/datas/successful-cases.json'
 import SuccessfulCaseCard from '@/components/SuccessfulCaseCard.vue'
 
 export default {

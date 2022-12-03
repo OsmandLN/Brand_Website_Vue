@@ -47,7 +47,7 @@ $project-font-TC: 'Noto Sans TC', sans-serif;
 </style>
 
 <script>
-import ServiceItems from '@/assets/datas/services.json'
+import ServiceItems from '../.././public/datas/services.json'
 import ServiceCard from '@/components/ServiceCard.vue'
 
 export default {
