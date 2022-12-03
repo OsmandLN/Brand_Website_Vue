@@ -18,7 +18,8 @@
     "vue-eslint-parser": "^9.0.3",
     "vue-media": "^1.1.1",
     "vue-router": "^4.1.2",
-    "vue2-leaflet": "^2.7.1"
+    "vue2-leaflet": "^2.7.1",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
