@@ -4,7 +4,9 @@ import HomePage from '../views/HomePage.vue'
 import AboutPage from '../views/AboutPage.vue'
 import ServicesPage from '../views/ServicesPage.vue'
 import SuccessfulCasesPage from '../views/SuccessfulCasesPage.vue'
+import StorePage from '../views/StorePage.vue'
 import ContactPage from '../views/ContactPage.vue'
+import ShoppingBag from '../views/ShoppingBag.vue'
 
 const routes = [
   {
@@ -28,9 +30,19 @@ const routes = [
     component: SuccessfulCasesPage
   },
   {
+    path: '/store',
+    name: 'store',
+    component: StorePage
+  },
+  {
     path: '/contact',
     name: 'contact',
     component: ContactPage
+  },
+  {
+    path: '/shopping-bag',
+    name: 'shopping-bag',
+    component: ShoppingBag
   },
   // In Vue3.x, the NotFound path differs from that in Vue2.x.
   {

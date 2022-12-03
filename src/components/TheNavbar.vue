@@ -7,21 +7,11 @@
       </router-link>
     </div>
     <label class="navbar-toggle-label" for="navbar-toggle">
-      <span
-        class="hamburger-top"
-        @click="onHamburgerChanged"
-        :class="{ rotateClockwise: topHamburgerRotated }"
-      ></span>
-      <span
-        class="hamburger-middle"
-        @click="onHamburgerChanged"
-        :class="{ disappeared: middleHamburgerDisappeared }"
-      ></span>
-      <span
-        class="hamburger-bottom"
-        @click="onHamburgerChanged"
-        :class="{ rotateAntiClockwise: bottomHamburgerRotated }"
-      ></span>
+      <span class="hamburger-top" @click="onHamburgerChanged" :class="{ rotateClockwise: topHamburgerRotated }"></span>
+      <span class="hamburger-middle" @click="onHamburgerChanged"
+        :class="{ disappeared: middleHamburgerDisappeared }"></span>
+      <span class="hamburger-bottom" @click="onHamburgerChanged"
+        :class="{ rotateAntiClockwise: bottomHamburgerRotated }"></span>
     </label>
     <input type="checkbox" class="navbar-toggle" id="navbar-toggle" />
     <nav class="navbar">
@@ -36,15 +26,17 @@
           <router-link class="nav-link" to="/services">服務項目</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/successful-cases"
-            >成功案例</router-link
-          >
+          <router-link class="nav-link" to="/successful-cases">成功案例</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/store">商城</router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link" to="/contact">聯絡我們</router-link>
         </li>
       </ul>
     </nav>
+    <router-link class="shopping-bag" to="/shopping-bag"><i class="fa-solid fa-bag-shopping"></i></router-link>
   </header>
 </template>
 
@@ -169,7 +161,7 @@ nav {
   display: none;
 
   &:checked {
-    ~ nav {
+    ~nav {
       transform: scale(1, 1);
 
       .nav-item {
@@ -205,11 +197,16 @@ nav {
   }
 }
 
-@media screen and (min-width: 576px) {
+.shopping-bag {
+  position: absolute;
+  right: 70px;
+  color: $gray-blue;
+  font-size: 18px;
 }
 
-@media screen and (min-width: 768px) {
-}
+// @media screen and (min-width: 576px) {}
+
+// @media screen and (min-width: 768px) {}
 
 @media screen and (min-width: 1024px) {
   .logo {
@@ -246,7 +243,7 @@ nav {
 
 <script>
 export default {
-  data: function () {
+  data() {
     return {
       topHamburgerRotated: false,
       middleHamburgerDisappeared: false,
