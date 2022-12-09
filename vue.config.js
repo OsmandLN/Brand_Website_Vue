@@ -8,7 +8,10 @@ module.exports = {
   css: {
     loaderOptions: {
       scss: {
-        additionalData: '@import "~@/assets/scss/mainContentContainerSetting.scss";'
+        additionalData: `
+        @import "@/assets/scss/mainContentContainerSetting.scss";
+        @import "@/assets/scss/checkoutStepsContainerStyle.scss";
+        `
       }
     }
   },

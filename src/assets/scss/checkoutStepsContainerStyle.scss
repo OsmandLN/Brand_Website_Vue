@@ -1,0 +1,29 @@
+@mixin checkoutStepsContainerStyle {
+  width: 100%;
+  // display: flex;
+  border: lightgray 1px solid;
+  border-radius: 5px;
+  margin: 30px 0;
+
+  span {
+    display: inline-block;
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  hr {
+    width: 90%;
+    height: 1px;
+    margin: 10px auto 15px auto;
+    color: lightgray;
+    background-color: lightgray;
+    border-width: 0;
+  }
+
+  @media screen and (min-width:1024px) {
+    // template {
+    //   display: flex;
+    //   flex-direction: column;
+    // }
+  }
+}
