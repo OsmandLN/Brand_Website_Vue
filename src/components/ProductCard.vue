@@ -4,7 +4,7 @@
     <span class="product-name">{{ product.name }}</span>
     <p class="product-description">{{ product.description }}</p>
     <i class="product-price">{{ product.price }} NTD</i>
-    <button><i class="fa-solid fa-cart-plus"></i></button>
+    <button @click="addToShoppingBag(product)"><i class="fa-solid fa-cart-plus"></i></button>
   </div>
 </template>
 
@@ -115,6 +115,12 @@ export default {
   data() {
     return {
       product: this.initialProduct
+    }
+  },
+  methods: {
+    addToShoppingBag(product) {
+      this.$store.commit('addItems', product)
+      console.log('shoppingItem is', product)
     }
   }
 }
