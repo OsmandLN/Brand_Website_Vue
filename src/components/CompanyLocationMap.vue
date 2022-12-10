@@ -8,7 +8,7 @@
   height: 400px;
   position: relative;
   top: 10vh;
-  border-radius:5px;
+  border-radius: 5px;
   margin: 40px auto
 }
 
@@ -22,7 +22,6 @@
 @media screen and (min-width: 1024px) {
   #company-location-map {
     width: 60%;
-    // height: 450px;
   }
 }
 </style>
@@ -40,13 +39,8 @@ Icon.Default.mergeOptions({
   shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 })
 
-// import { LMap, LTileLayer, LMarker } from 'vue2-leaflet'
-
 export default {
   name: 'CompanyLocationMap',
-  // components: {
-  //   LMap, LTileLayer, LMarker
-  // },
   data() {
     return {
       map: null

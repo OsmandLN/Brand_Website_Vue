@@ -19,8 +19,6 @@ $project-font-TC: 'Noto Sans TC', sans-serif;
   font-family: $project-font-TC;
 
   .what-we-offer-title {
-    // display: inline-block;
-    // width: 40%;
     border-bottom: white 3px solid;
     margin: 40px auto 20px auto;
     font-size: 20px;

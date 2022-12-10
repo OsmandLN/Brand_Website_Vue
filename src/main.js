@@ -33,16 +33,15 @@ app.use(VueAxios, axios)
 app.use(store)
 app.use(vuetify)
 
-app.use(vuetify, {
-  breakpoint: {
-    thresholds: {
-      xs: 576,
-      md: 768,
-      lg: 1024,
-      xl: 1200
-    }
-    // scrollbarWidth: 10
-  }
-})
+// app.use(vuetify, {
+//   breakpoint: {
+//     thresholds: {
+//       xs: 576,
+//       md: 768,
+//       lg: 1024,
+//       xl: 1200
+//     }
+//       }
+// })
 
 app.mount('#app')
