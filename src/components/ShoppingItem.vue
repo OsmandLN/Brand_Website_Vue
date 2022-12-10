@@ -1,113 +1,15 @@
 <template>
   <li class="shopping-item">
-    <img :src="require('@/assets/images/notebookA.png')" alt="product-image">
-    <span class="item-name">ABCDEF</span>
+    <img :src="require('@/assets/images/' + item.image)" alt="shopping-item-image">
+    <span class="item-name">{{ item.name }}</span>
     <!-- <span class="item-price">300 NTD</span> -->
     <div class="counter-box">
       <i class="fa-solid fa-circle-minus"></i>
       <span class="count">10</span>
       <i class="fa-solid fa-circle-plus"></i>
     </div>
-    <span class="item-amount">3000 NTD</span>
-  </li>
-  <li class="shopping-item">
-    <img :src="require('@/assets/images/notebookA.png')" alt="product-image">
-    <span class="item-name">ABCDEF</span>
-    <!-- <span class="item-price">300 NTD</span> -->
-    <div class="counter-box">
-      <i class="fa-solid fa-circle-minus"></i>
-      <span class="count">10</span>
-      <i class="fa-solid fa-circle-plus"></i>
-    </div>
-    <span class="item-amount">3000 NTD</span>
-  </li>
-  <li class="shopping-item">
-    <img :src="require('@/assets/images/notebookA.png')" alt="product-image">
-    <span class="item-name">ABCDEF</span>
-    <!-- <span class="item-price">300 NTD</span> -->
-    <div class="counter-box">
-      <i class="fa-solid fa-circle-minus"></i>
-      <span class="count">10</span>
-      <i class="fa-solid fa-circle-plus"></i>
-    </div>
-    <span class="item-amount">3000 NTD</span>
-  </li>
-  <li class="shopping-item">
-    <img :src="require('@/assets/images/notebookA.png')" alt="product-image">
-    <span class="item-name">ABCDEF</span>
-    <!-- <span class="item-price">300 NTD</span> -->
-    <div class="counter-box">
-      <i class="fa-solid fa-circle-minus"></i>
-      <span class="count">10</span>
-      <i class="fa-solid fa-circle-plus"></i>
-    </div>
-    <span class="item-amount">3000 NTD</span>
-  </li>
-  <li class="shopping-item">
-    <img :src="require('@/assets/images/notebookA.png')" alt="product-image">
-    <span class="item-name">ABCDEF</span>
-    <!-- <span class="item-price">300 NTD</span> -->
-    <div class="counter-box">
-      <i class="fa-solid fa-circle-minus"></i>
-      <span class="count">10</span>
-      <i class="fa-solid fa-circle-plus"></i>
-    </div>
-    <span class="item-amount">3000 NTD</span>
-  </li>
-  <li class="shopping-item">
-    <img :src="require('@/assets/images/notebookA.png')" alt="product-image">
-    <span class="item-name">ABCDEF</span>
-    <!-- <span class="item-price">300 NTD</span> -->
-    <div class="counter-box">
-      <i class="fa-solid fa-circle-minus"></i>
-      <span class="count">10</span>
-      <i class="fa-solid fa-circle-plus"></i>
-    </div>
-    <span class="item-amount">3000 NTD</span>
-  </li>
-  <li class="shopping-item">
-    <img :src="require('@/assets/images/notebookA.png')" alt="product-image">
-    <span class="item-name">ABCDEF</span>
-    <!-- <span class="item-price">300 NTD</span> -->
-    <div class="counter-box">
-      <i class="fa-solid fa-circle-minus"></i>
-      <span class="count">10</span>
-      <i class="fa-solid fa-circle-plus"></i>
-    </div>
-    <span class="item-amount">3000 NTD</span>
-  </li>
-  <li class="shopping-item">
-    <img :src="require('@/assets/images/notebookA.png')" alt="product-image">
-    <span class="item-name">ABCDEF</span>
-    <!-- <span class="item-price">300 NTD</span> -->
-    <div class="counter-box">
-      <i class="fa-solid fa-circle-minus"></i>
-      <span class="count">10</span>
-      <i class="fa-solid fa-circle-plus"></i>
-    </div>
-    <span class="item-amount">3000 NTD</span>
-  </li>
-  <li class="shopping-item">
-    <img :src="require('@/assets/images/notebookA.png')" alt="product-image">
-    <span class="item-name">ABCDEF</span>
-    <!-- <span class="item-price">300 NTD</span> -->
-    <div class="counter-box">
-      <i class="fa-solid fa-circle-minus"></i>
-      <span class="count">10</span>
-      <i class="fa-solid fa-circle-plus"></i>
-    </div>
-    <span class="item-amount">3000 NTD</span>
-  </li>
-  <li class="shopping-item">
-    <img :src="require('@/assets/images/notebookA.png')" alt="product-image">
-    <span class="item-name">ABCDEF</span>
-    <!-- <span class="item-price">300 NTD</span> -->
-    <div class="counter-box">
-      <i class="fa-solid fa-circle-minus"></i>
-      <span class="count">10</span>
-      <i class="fa-solid fa-circle-plus"></i>
-    </div>
-    <span class="item-amount">3000 NTD</span>
+    <span class="item-amount">{{ item.price }} NTD</span>
+    <button @click.prevent="removeFromShoppingBag(item)"><i class="fa-solid fa-square-xmark"></i></button>
   </li>
 </template>
 
@@ -139,5 +41,23 @@
 </style>
 
 <script>
-export default {}
+export default {
+  props: {
+    initialShoppingItem: {
+      type: Object,
+      require: true
+    }
+  },
+  data() {
+    return {
+      item: this.initialShoppingItem
+    }
+  },
+  methods: {
+    removeFromShoppingBag(item) {
+      this.$store.commit('removeItems', item)
+      console.log('removeItem is', item)
+    }
+  }
+}
 </script>
