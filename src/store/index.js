@@ -3,13 +3,28 @@ import axios from 'axios'
 
 export default createStore({
   state: {
-    products: []
+    products: [],
+    shoppingItems: []
   },
-  getters: {
-  },
+  getters: {},
   mutations: {
     setProductsInfo(state, payload) {
       state.products = payload
+    },
+    addItems(state, payload) {
+      if (state.shoppingItems.findIndex((item) => item.id === payload.id) !== -1) {
+        alert('此商品已在購物袋中!')
+      } else {
+        state.shoppingItems.push(payload)
+        // save into storage
+        localStorage.setItem('toBuyItems', JSON.stringify(state.shoppingItems))
+
+        console.log('shoppingItems', state.shoppingItems)
+      }
+    },
+    removeItems(state, payload) {
+      state.shoppingItems = state.shoppingItems.filter((unwantedItem) => unwantedItem.id !== payload.id)
+      console.log('payload', payload)
     }
   },
   actions: {
@@ -25,6 +40,5 @@ export default createStore({
         })
     }
   },
-  modules: {
-  }
+  modules: {}
 })
