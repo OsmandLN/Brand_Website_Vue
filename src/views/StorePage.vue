@@ -26,7 +26,6 @@ $project-font-TC: 'Noto Sans TC', sans-serif;
 
 <script>
 import ProductCard from '@/components/ProductCard.vue'
-// import Products from '@/assets/datas/products.json'
 
 export default {
   components: {
@@ -40,10 +39,5 @@ export default {
   created() {
     this.$store.dispatch('fetchProductsInfo')
   }
-  // data() {
-  //   return {
-  //     products: Products.results
-  //   }
-  // }
 }
 </script>
