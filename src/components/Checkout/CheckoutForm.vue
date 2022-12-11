@@ -1,7 +1,8 @@
 <template>
-  <CheckoutStepOne />
-  <CheckoutStepTwo />
-  <CheckoutStepThree />
+  <CheckoutStepOne v-if="nowStep === 1" />
+  <CheckoutStepTwo v-if="nowStep === 2" />
+  <CheckoutStepThree v-if="nowStep === 3" />
+  <!-- <span>{{ nowStep }}</span> -->
 </template>
 
 <style lang="scss" scoped>
@@ -18,6 +19,24 @@ export default {
     CheckoutStepOne,
     CheckoutStepTwo,
     CheckoutStepThree
+  },
+  props: {
+    initialCurrentStep: {
+      type: Number,
+      required: true
+    }
+  },
+  data() {
+    return {
+      nowStep: this.initialCurrentStep // 不寫watch的情況下，為什麼nowStep吃不到initialCurrentStep的變化?
+    }
+  },
+  watch: {
+    initialCurrentStep: {
+      handler: function () {
+        this.nowStep = this.initialCurrentStep
+      }
+    }
   }
 }
 </script>
