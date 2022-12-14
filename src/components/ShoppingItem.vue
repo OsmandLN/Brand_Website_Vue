@@ -4,11 +4,11 @@
     <span class="item-name">{{ item.name }}</span>
     <!-- <span class="item-price">300 NTD</span> -->
     <div class="counter-box">
-      <i class="fa-solid fa-circle-minus"></i>
-      <span class="count">10</span>
-      <i class="fa-solid fa-circle-plus"></i>
+      <i class="fa-solid fa-circle-minus" @click="onMinusBtnClicked(item)"></i>
+      <span class="count">{{ item.units }}</span>
+      <i class="fa-solid fa-circle-plus" @click="onPlusBtnClicked(item)"></i>
     </div>
-    <span class="item-amount">{{ item.price }} NTD</span>
+    <span class="item-amount">{{ item.price * item.units }} NTD</span>
     <button @click.prevent="removeFromShoppingBag(item)"><i class="fa-solid fa-square-xmark"></i></button>
   </li>
 </template>
@@ -57,6 +57,31 @@ export default {
     removeFromShoppingBag(item) {
       this.$store.commit('removeItems', item)
       console.log('removeItem is', item)
+    },
+    onMinusBtnClicked(item) {
+      if (this.item.units > 1) {
+        this.$store.commit('decreaseItemUnits', item)
+      } else {
+        // eslint-disable-next-line
+        return
+      }
+    },
+    onPlusBtnClicked(item) {
+      if (this.item.units < 99) {
+        this.$store.commit('increaseItemUnits', item)
+      } else {
+        // eslint-disable-next-line
+        return
+      }
+    }
+  },
+  watch: {
+    item: {
+      handler: function () {
+        this.$emit('updateItemUnits', this.item.units)
+        console.log('updateItemUnits', this.item, this.item.units)
+      },
+      deep: true
     }
   }
 }

@@ -5,42 +5,48 @@
       "image": "notebookA.png",
       "name": "筆電 A",
       "description": "很好用，很好用，很好用，很好用，很好用的筆電A。",
-      "price": 20000
+      "price": 20000,
+      "units": 1
     },
     {
       "id": 2,
       "image": "notebookB.png",
       "name": "筆電 B",
       "description": "很好用，很好用，很好用，很好用，很好用的筆電B。",
-      "price": 25000
+      "price": 25000,
+      "units": 1
     },
     {
       "id": 3,
       "image": "notebookC.png",
       "name": "筆電 C",
       "description": "很好用，很好用，很好用，很好用，很好用的筆電C。",
-      "price": 26000
+      "price": 26000,
+      "units": 1
     },
     {
       "id": 4,
       "image": "notebookD.png",
       "name": "筆電 D",
       "description": "很好用，很好用，很好用，很好用，很好用的筆電D。",
-      "price": 27500
+      "price": 27500,
+      "units": 1
     },
     {
       "id": 5,
       "image": "notebookE.png",
       "name": "筆電 E",
       "description": "很好用，很好用，很好用，很好用，很好用的筆電E。",
-      "price": 28000
+      "price": 28000,
+      "units": 1
     },
     {
       "id": 6,
       "image": "notebookF.png",
       "name": "筆電 F",
       "description": "很好用，很好用，很好用，很好用，很好用的筆電F。",
-      "price": 30000
+      "price": 30000,
+      "units": 1
     }
   ]
 }

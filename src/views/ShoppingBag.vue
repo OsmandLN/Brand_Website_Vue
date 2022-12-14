@@ -5,12 +5,14 @@
     </div>
     <div class="buttons-panel">
       <button @click="moveToPreviousStep" class="previous" v-if="currentStep === 2 || currentStep === 3">上一步</button>
-      <button @click="moveToNextStep" class="next" v-if="currentStep === 1 || currentStep === 2">下一步</button>
+      <button @click="moveToNextStep" class="next" v-if="currentStep === 1 || currentStep === 2" :disabled="
+        getNextStepBtnDisabledStatus
+      ">下一步{{ getNextStepBtnDisabledStatus }}</button>
       <button class="confirm" v-if="currentStep === 3">確認下單</button>
     </div>
     <ul class="items-wrapper">
       <ShoppingItem v-for="shoppingItem in getShoppingItems" :key="shoppingItem.id"
-        :initial-shopping-item="shoppingItem" />
+        :initial-shopping-item="shoppingItem" @updateItemUnits="sumUpTotalAmount(itemUnits)" />
     </ul>
     <div class="amount-panel">
       <div class="delivery-fee-wrapper">
@@ -20,7 +22,7 @@
       <hr>
       <div class="total-amount-wrapper">
         <span>總計</span>
-        <span>3200 NTD</span>
+        <span>{{ totalAmount }} NTD</span>
       </div>
     </div>
   </div>
@@ -134,7 +136,7 @@ $project-font-TC: 'Noto Sans TC', sans-serif;
   #shopping-bag {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: 700px auto;
 
     .form-wrapper {
       display: flex;
@@ -181,7 +183,8 @@ export default {
   },
   data() {
     return {
-      currentStep: 1
+      currentStep: 1,
+      totalAmount: 0
     }
   },
   methods: {
@@ -202,11 +205,21 @@ export default {
         // eslint-disable-next-line
         return
       }
+    },
+    sumUpTotalAmount(itemUnits) {
+      this.$store.shoppingItems.forEach(item => {
+        this.totalAmount = this.totalAmount + item.price * itemUnits
+        console.log('totalAmount', this.totalAmount)
+      })
+      return this.totalAmount
     }
   },
   computed: {
     getShoppingItems() {
       return this.$store.state.shoppingItems
+    },
+    getNextStepBtnDisabledStatus() {
+      return this.$store.state.nextStepBtnDisabled
     }
   }
 }

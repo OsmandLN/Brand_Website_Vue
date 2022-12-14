@@ -4,7 +4,9 @@ import axios from 'axios'
 export default createStore({
   state: {
     products: [],
-    shoppingItems: []
+    shoppingItems: [],
+    // form
+    nextStepBtnDisabled: false
   },
   getters: {},
   mutations: {
@@ -14,6 +16,8 @@ export default createStore({
     addItems(state, payload) {
       if (state.shoppingItems.findIndex((item) => item.id === payload.id) !== -1) {
         alert('此商品已在購物袋中!')
+        // eslint-disable-next-line
+        return
       } else {
         state.shoppingItems.push(payload)
         // save into storage
@@ -25,6 +29,17 @@ export default createStore({
     removeItems(state, payload) {
       state.shoppingItems = state.shoppingItems.filter((unwantedItem) => unwantedItem.id !== payload.id)
       console.log('payload', payload)
+    },
+    increaseItemUnits(state, payload) {
+      const bagItem = state.shoppingItems.find((item) => item.id === payload.id)
+      bagItem.units++
+    },
+    decreaseItemUnits(state, payload) {
+      const bagItem = state.shoppingItems.find((item) => item.id === payload.id)
+      bagItem.units--
+    },
+    isNextStepBtnDisabled(state, payload) {
+      state.nextStepBtnDisabled = payload
     }
   },
   actions: {
