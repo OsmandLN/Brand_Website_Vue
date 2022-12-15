@@ -68,7 +68,7 @@ header {
   //   #eeb66d,
   //   #ffa07a
   // );
-  background-color: rgba($color: white, $alpha: 0.5);
+  background-color: rgba($color: white, $alpha: 0.9);
   box-shadow: 0 2px 10px $gray-blue;
   z-index: 999;
 }
