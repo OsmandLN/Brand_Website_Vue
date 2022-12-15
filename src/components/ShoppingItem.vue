@@ -74,15 +74,6 @@ export default {
         return
       }
     }
-  },
-  watch: {
-    item: {
-      handler: function () {
-        this.$emit('updateItemUnits', this.item.units)
-        console.log('updateItemUnits', this.item, this.item.units)
-      },
-      deep: true
-    }
   }
 }
 </script>

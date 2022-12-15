@@ -32,6 +32,7 @@ export default createStore({
     },
     increaseItemUnits(state, payload) {
       const bagItem = state.shoppingItems.find((item) => item.id === payload.id)
+      console.log('bagitem', bagItem)
       bagItem.units++
     },
     decreaseItemUnits(state, payload) {

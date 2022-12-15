@@ -22,7 +22,7 @@
       <hr>
       <div class="total-amount-wrapper">
         <span>總計</span>
-        <span>{{ totalAmount }} NTD</span>
+        <span>{{ sumUpTotalAmount }} NTD</span>
       </div>
     </div>
   </div>
@@ -183,8 +183,7 @@ export default {
   },
   data() {
     return {
-      currentStep: 1,
-      totalAmount: 0
+      currentStep: 1
     }
   },
   methods: {
@@ -205,13 +204,6 @@ export default {
         // eslint-disable-next-line
         return
       }
-    },
-    sumUpTotalAmount(itemUnits) {
-      this.$store.shoppingItems.forEach(item => {
-        this.totalAmount = this.totalAmount + item.price * itemUnits
-        console.log('totalAmount', this.totalAmount)
-      })
-      return this.totalAmount
     }
   },
   computed: {
@@ -220,6 +212,14 @@ export default {
     },
     getNextStepBtnDisabledStatus() {
       return this.$store.state.nextStepBtnDisabled
+    },
+    sumUpTotalAmount() {
+      // console.log('shoppingItems', this.$store.shoppingItems)
+      return this.$store.state.shoppingItems.reduce((accumulator, item) => {
+        return accumulator + item.price * item.units
+        // console.log('totalAmount', this.totalAmount)
+      }, 0)
+      // return totalAmount
     }
   }
 }
