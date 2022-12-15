@@ -1,23 +1,19 @@
 <template>
   <div class="shopping-bag" id="shopping-bag">
+    <!-- Multiple-Step Form -->
     <div class="form-wrapper">
-      <CheckoutForm :initial-current-step="currentStep" />
+      <CheckoutForm @updateDeliveryFee="getDeliveryFee" />
     </div>
-    <div class="buttons-panel">
-      <button @click="moveToPreviousStep" class="previous" v-if="currentStep === 2 || currentStep === 3">上一步</button>
-      <button @click="moveToNextStep" class="next" v-if="currentStep === 1 || currentStep === 2" :disabled="
-        getNextStepBtnDisabledStatus
-      ">下一步{{ getNextStepBtnDisabledStatus }}</button>
-      <button class="confirm" v-if="currentStep === 3">確認下單</button>
-    </div>
+    <!-- Things to buy -->
     <ul class="items-wrapper">
       <ShoppingItem v-for="shoppingItem in getShoppingItems" :key="shoppingItem.id"
-        :initial-shopping-item="shoppingItem" @updateItemUnits="sumUpTotalAmount(itemUnits)" />
+        :initial-shopping-item="shoppingItem" @updateItemUnits="sumUpTotalAmount" />
     </ul>
+    <!-- Amount Panel -->
     <div class="amount-panel">
       <div class="delivery-fee-wrapper">
         <span>運費</span>
-        <span>200 NTD</span>
+        <span>{{ deliveryFee }} NTD</span>
       </div>
       <hr>
       <div class="total-amount-wrapper">
@@ -62,32 +58,6 @@ $project-font-TC: 'Noto Sans TC', sans-serif;
     &::-webkit-scrollbar-thumb {
       background-color: lightgrey;
       border-radius: 3px;
-    }
-  }
-
-  .buttons-panel {
-    position: absolute;
-    bottom: 60px;
-    width: 90%;
-    // display: flex;
-    // justify-content: space-around;
-
-    button {
-      padding: 5px;
-      border-radius: 5px;
-      background-color: lightgray;
-      box-shadow: 2px 2px 2px black;
-    }
-
-    .previous {
-      position: relative;
-      right: 30%
-    }
-
-    .next,
-    .confirm {
-      position: relative;
-      left: 30%
     }
   }
 
@@ -136,33 +106,27 @@ $project-font-TC: 'Noto Sans TC', sans-serif;
   #shopping-bag {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 700px auto;
+    grid-template-rows: 500px 200px;
 
     .form-wrapper {
       display: flex;
       justify-content: center;
       margin: 0 auto;
       grid-column: 1/2;
-      grid-row: 1/2;
+      grid-row: 1/3;
     }
 
     .items-wrapper {
       position: relative;
-      bottom: 50px;
+      top: 25px;
       margin: 0 auto;
       grid-column: 2/3;
       grid-row: 1/2;
     }
 
-    .buttons-panel {
-      position: relative;
-      bottom: 0;
-      grid-column: 1/2;
-      grid-row: 2/3;
-      margin: 0 auto
-    }
-
     .amount-panel {
+      position: relative;
+      top: 25px;
       grid-column: 2/3;
       grid-row: 2/3;
       margin: 0 auto
@@ -173,53 +137,41 @@ $project-font-TC: 'Noto Sans TC', sans-serif;
 
 <script>
 import ShoppingItem from '@/components/ShoppingItem.vue'
-import CheckoutForm from '@/components/Checkout/CheckoutForm.vue'
+import CheckoutForm from '@/components/CheckoutForm.vue'
 
 export default {
-
   components: {
     ShoppingItem,
     CheckoutForm
   },
   data() {
     return {
-      currentStep: 1
+      deliveryFee: 0
     }
   },
   methods: {
-    moveToPreviousStep() {
-      if (this.currentStep > 1) {
-        this.currentStep--
-        console.log('to previous and now is', this.currentStep)
-      } else {
-        // eslint-disable-next-line
-        return
-      }
-    },
-    moveToNextStep() {
-      if (this.currentStep < 3) {
-        this.currentStep++
-        console.log('to next and now is', this.currentStep)
-      } else {
-        // eslint-disable-next-line
-        return
-      }
+    getDeliveryFee(fee) {
+      this.deliveryFee = fee
+      console.log('fee', fee)
+      console.log('deliveryFee', this.deliveryFee)
     }
   },
   computed: {
     getShoppingItems() {
       return this.$store.state.shoppingItems
     },
-    getNextStepBtnDisabledStatus() {
-      return this.$store.state.nextStepBtnDisabled
-    },
-    sumUpTotalAmount() {
+    // getNextStepBtnDisabledStatus() {
+    //   return this.$store.state.nextStepBtnDisabled
+    // },
+    sumUpItemsAmount() {
       // console.log('shoppingItems', this.$store.shoppingItems)
       return this.$store.state.shoppingItems.reduce((accumulator, item) => {
         return accumulator + item.price * item.units
         // console.log('totalAmount', this.totalAmount)
       }, 0)
-      // return totalAmount
+    },
+    sumUpTotalAmount() {
+      return this.sumUpItemsAmount + this.deliveryFee
     }
   }
 }
