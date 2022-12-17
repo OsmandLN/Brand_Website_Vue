@@ -1,7 +1,7 @@
 @mixin checkoutStepsContainerStyle {
   width: 100%;
   // display: flex;
-  border: lightgray 1px solid;
+  border: lightgray 2px dashed;
   border-radius: 5px;
   margin: 30px 0;
 
@@ -20,5 +20,9 @@
     border-width: 0;
   }
 
-  @media screen and (min-width:1024px) {}
+  @media screen and (min-width:1024px) {
+    &:hover {
+      border: black 2px dashed
+    }
+  }
 }

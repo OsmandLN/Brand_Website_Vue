@@ -45,7 +45,7 @@ $project-font-TC: 'Noto Sans TC', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: lightgray 1px solid;
+    border: lightgray 2px dashed;
     border-radius: 5px;
     overflow-y: scroll;
     height: 490px;
@@ -67,7 +67,7 @@ $project-font-TC: 'Noto Sans TC', sans-serif;
     flex-direction: column;
     align-items: center;
     padding: 0 15px;
-    border: lightgray 1px solid;
+    border: lightgray 2px dashed;
     border-radius: 5px;
     margin: 20px 0;
 
@@ -122,6 +122,10 @@ $project-font-TC: 'Noto Sans TC', sans-serif;
       margin: 0 auto;
       grid-column: 2/3;
       grid-row: 1/2;
+
+      &:hover {
+        border: black 2px dashed
+      }
     }
 
     .amount-panel {
