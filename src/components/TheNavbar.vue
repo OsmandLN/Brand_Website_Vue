@@ -53,21 +53,6 @@ header {
   top: 0;
   display: flex;
   align-items: center;
-  // background-image: linear-gradient(
-  //   to right,
-  //   #ffffe0,
-  //   #effed6,
-  //   #d9fed2,
-  //   #bdfed4,
-  //   #9bfddc,
-  //   #96f8cf,
-  //   #92f2c1,
-  //   #8fecb3,
-  //   #b4dd8c,
-  //   #d4cb73,
-  //   #eeb66d,
-  //   #ffa07a
-  // );
   background-color: rgba($color: white, $alpha: 0.9);
   box-shadow: 0 2px 10px $gray-blue;
   z-index: 999;
@@ -118,26 +103,10 @@ nav {
   top: 100%; // navbar從header底部開始做展開延伸
   display: flex;
   justify-content: center;
-  // background-image: linear-gradient(
-  //   to right,
-  //   #ffffe0,
-  //   #effed6,
-  //   #d9fed2,
-  //   #bdfed4,
-  //   #9bfddc,
-  //   #96f8cf,
-  //   #92f2c1,
-  //   #8fecb3,
-  //   #b4dd8c,
-  //   #d4cb73,
-  //   #eeb66d,
-  //   #ffa07a
-  // );
   background-color: rgba($color: white, $alpha: 0.9);
   transform: scale(1, 0);
   transform-origin: top;
   transition: transform 0.3s ease-out;
-  // box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 
   .nav-list {
     display: flex;
@@ -203,10 +172,6 @@ nav {
   color: $gray-blue;
   font-size: 18px;
 }
-
-// @media screen and (min-width: 576px) {}
-
-// @media screen and (min-width: 768px) {}
 
 @media screen and (min-width: 1024px) {
   .logo {

@@ -164,9 +164,6 @@ export default {
     getShoppingItems() {
       return this.$store.state.shoppingItems
     },
-    // getNextStepBtnDisabledStatus() {
-    //   return this.$store.state.nextStepBtnDisabled
-    // },
     sumUpItemsAmount() {
       // console.log('shoppingItems', this.$store.shoppingItems)
       return this.$store.state.shoppingItems.reduce((accumulator, item) => {

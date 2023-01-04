@@ -8,7 +8,6 @@
 </template>
 
 <style lang="scss" scoped>
-// @import '../assets/scss/mainContentContainerSetting.scss';
 $project-font-TC: 'Noto Sans TC', sans-serif;
 
 .about-description {

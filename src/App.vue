@@ -6,7 +6,6 @@
 </template>
 
 <style lang="scss">
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -32,8 +31,6 @@ nav {
 <script>
 import TheNavbar from '../src/components/TheNavbar.vue'
 import TheFooter from '../src/components/TheFooter.vue'
-
-// import axios from 'axios'
 
 export default {
   components: {

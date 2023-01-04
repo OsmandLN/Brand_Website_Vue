@@ -29,19 +29,7 @@ const app = createApp(App)
 // use the plugins
 app.use(router)
 app.use(VueAxios, axios)
-// app.use(Vuex)
 app.use(store)
 app.use(vuetify)
-
-// app.use(vuetify, {
-//   breakpoint: {
-//     thresholds: {
-//       xs: 576,
-//       md: 768,
-//       lg: 1024,
-//       xl: 1200
-//     }
-//       }
-// })
 
 app.mount('#app')

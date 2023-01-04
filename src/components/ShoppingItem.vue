@@ -21,7 +21,6 @@
   align-items: center;
   margin: 5px 0;
 
-  // flex-direction: column;
   img {
     width: 60px;
     height: 60px;
@@ -30,7 +29,6 @@
 
   .counter-box {
     display: flex;
-    // justify-content: space-between;
     align-items: center;
 
     .count {

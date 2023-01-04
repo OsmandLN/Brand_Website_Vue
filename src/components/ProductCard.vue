@@ -21,15 +21,8 @@
   align-items: center;
   box-shadow: 5px 5px 5px 3px lightgray;
 
-  // transition: transform 0.3s ease-in;
-
-  // &:hover {
-  //   transform: scale(1.02);
-  // }
-
   img {
     width: 80%;
-    // height: 50%;
     border-radius: 5px;
     margin: 20px 0;
   }
@@ -63,9 +56,6 @@
 
 @media screen and (min-width: 768px) {
   .product-card {
-    // img {
-    //   width: 70%
-    // }
 
     .product-name {
       font-size: 18px;
