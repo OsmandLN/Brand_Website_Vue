@@ -7,8 +7,7 @@
       <v-form ref="form" v-model="valid">
         <v-select v-model="select" :items="appellations" :rules="[v => (v && v.length < 3) || '稱謂為必填']" label="稱謂"
           required class="v-col-6"></v-select>
-        <v-text-field v-model="name" :counter="10" :rules="nameRules" label="姓名" required
-          class="v-col-12"></v-text-field>
+        <v-text-field v-model="name" :counter="10" :rules="nameRules" label="姓名" required class="v-col-12"></v-text-field>
         <v-text-field v-model="cellPhoneNumber" :rules="cellPhoneNumberRules" label="手機號碼" required
           class="v-col-12"></v-text-field>
         <v-text-field v-model="email" :rules="emailRules" label="E-mail" required class="v-col-12"></v-text-field>
@@ -44,8 +43,9 @@
     </div>
     <!-- Button Panel -->
     <div class="buttons-panel">
-      <button @click="moveToPreviousStep" class="previous" v-if="currentStep === 2 || currentStep === 3">上一步</button>
-      <button @click="moveToNextStep" class="next" v-if="currentStep === 1 || currentStep === 2">下一步</button>
+      <button @click.prevent="moveToPreviousStep" class="previous"
+        v-if="currentStep === 2 || currentStep === 3">上一步</button>
+      <button @click.prevent="moveToNextStep" class="next" v-if="currentStep === 1 || currentStep === 2">下一步</button>
       <button class="confirm" v-if="currentStep === 3">確認下單</button>
     </div>
   </form>
