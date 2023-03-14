@@ -45,6 +45,9 @@ $project-font-TC: 'Noto Sans TC', sans-serif;
 
 @media screen and (min-width: 1024px) {
   .about-description {
+    width: 85%;
+    margin: 0 auto;
+
     p {
       width: 50%;
     }

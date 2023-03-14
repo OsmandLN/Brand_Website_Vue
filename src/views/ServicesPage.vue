@@ -35,6 +35,8 @@ $project-font-TC: 'Noto Sans TC', sans-serif;
 
 @media screen and (min-width: 1024px) {
   .services-panel {
+    width:85%;
+    margin: 0 auto;
     .services-wrapper {
       flex-direction: row;
       flex-wrap: wrap;
