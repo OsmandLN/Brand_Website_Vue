@@ -7,7 +7,7 @@
       <v-form ref="form" v-model="valid">
         <v-select v-model="select" :items="appellations" :rules="[v => (v && v.length < 3) || '稱謂為必填']" label="稱謂"
           required class="v-col-6"></v-select>
-        <v-text-field v-model="name" :counter="10" :rules="nameRules" label="姓名" required class="v-col-12"></v-text-field>
+        <v-text-field v-model="name" :rules="nameRules" label="姓名" required class="v-col-12"></v-text-field>
         <v-text-field v-model="cellPhoneNumber" :rules="cellPhoneNumberRules" label="手機號碼" required
           class="v-col-12"></v-text-field>
         <v-text-field v-model="email" :rules="emailRules" label="E-mail" required class="v-col-12"></v-text-field>
@@ -31,7 +31,7 @@
       <span>付款資訊</span>
       <hr>
       <v-form ref="form" v-model="valid">
-        <v-text-field v-model="cardHolder" :counter="10" :rules="cardHolderNameRules" label="持卡人姓名" required
+        <v-text-field v-model="cardHolder" :rules="cardHolderNameRules" label="持卡人姓名" required
           class="v-col-12"></v-text-field>
         <v-text-field v-model="cardNumber" :rules="cardNumberRules" label="信用卡卡號(XXXX-XXXX-XXXX-XXXX)" required
           class="v-col-12"></v-text-field>
@@ -121,7 +121,7 @@ export default {
       name: '',
       nameRules: [
         v => !!v || '姓名為必填',
-        v => (v && v.length <= 10) || '姓名需小於10個字'
+        v => /^[\u4e00-\u9fa5]+$|^[a-zA-Z\s]+$/.test(v) || '請輸入有效姓名'
       ],
       cellPhoneNumber: '',
       cellPhoneNumberRules: [
@@ -135,7 +135,8 @@ export default {
       ],
       address: '',
       addressRules: [
-        v => !!v || '地址為必填'
+        v => !!v || '地址為必填',
+        v => /^[0-9\u4e00-\u9fa5\\-]+$/.test(v) || '請輸入有效地址'
       ],
       // Step Two Inputs
       selected: '0',
@@ -143,7 +144,7 @@ export default {
       cardHolder: '',
       cardHolderNameRules: [
         v => !!v || '姓名為必填',
-        v => (v && v.length <= 10) || '姓名需小於10個字'
+        v => /^[\u4e00-\u9fa5]+$|^[a-zA-Z\s]+$/.test(v) || '請輸入有效姓名'
       ],
       cardNumber: '',
       cardNumberRules: [
